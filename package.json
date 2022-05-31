@@ -1,0 +1,64 @@
+{
+	"name": "coalesce",
+	"private": true,
+	"version": "0.0.0",
+	"description": "An IDE for Processing",
+	"main": "app/index.js",
+	"scripts": {
+		"start": "npm run build && npm run electron:start",
+		"dev": "concurrently -k \"vite\" \"npm run electron:dev\"",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"electron:dev": "cross-env IS_DEV=true electron-forge start",
+		"electron:build": "electron-forge make",
+		"electron:package": "electron-forge package"
+	},
+	"dependencies": {
+		"concurrently": "^7.2.1",
+		"cross-env": "^7.0.3",
+		"electron-squirrel-startup": "^1.0.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.63",
+		"@electron-forge/maker-deb": "^6.0.0-beta.63",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.63",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+		"@electron-forge/maker-zip": "^6.0.0-beta.63",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"@vitejs/plugin-react": "^1.3.0",
+		"electron": "19.0.1",
+		"typescript": "^4.6.3",
+		"vite": "^2.9.9"
+	},
+	"license": "MIT",
+	"config": {
+		"forge": {
+			"packagerConfig": {},
+			"makers": [
+				{
+					"name": "@electron-forge/maker-squirrel",
+					"config": {
+						"name": "coalesce"
+					}
+				},
+				{
+					"name": "@electron-forge/maker-zip",
+					"platforms": [
+						"darwin"
+					]
+				},
+				{
+					"name": "@electron-forge/maker-deb",
+					"config": {}
+				},
+				{
+					"name": "@electron-forge/maker-rpm",
+					"config": {}
+				}
+			]
+		}
+	}
+}
