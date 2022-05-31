@@ -1,0 +1,24 @@
+{
+	"name": "coalesce",
+	"version": "1.0.0",
+	"description": "An IDE for Processing",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "tsc && copy index.html dist",
+		"start": "npm run build && electron ./dist/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JaryJay/coalesce.git"
+	},
+	"author": "JaryJay",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/JaryJay/coalesce/issues"
+	},
+	"homepage": "https://github.com/JaryJay/coalesce#readme",
+	"dependencies": {
+		"electron": "^19.0.1",
+		"typescript": "^4.7.2"
+	}
+}
