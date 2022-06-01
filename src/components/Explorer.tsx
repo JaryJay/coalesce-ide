@@ -1,6 +1,8 @@
 const Explorer = () => {
     return (
-        <h1>Explorer</h1>
+        <div className="flex-none h-full p-5">
+            Explorer
+        </div>
     );
 };
 

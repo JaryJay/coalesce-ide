@@ -1,6 +1,8 @@
 const Tools = () => {
     return (
-        <h1>Tools</h1>
+        <div className="flex-auto h-full p-5 w-2">
+            Tools
+        </div>
     );
 };
 

@@ -4,9 +4,11 @@ function App() {
 	return (
 		<div>
 			<Header />
-			<Explorer />
-			<Editor />
-			<Tools />
+			<div className="flex resize-y bg-slate-600">
+				<Explorer />
+				<Editor />
+				<Tools />
+			</div>
 			<Console />
 			<Footer />
 		</div>

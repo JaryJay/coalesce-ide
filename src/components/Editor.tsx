@@ -1,6 +1,16 @@
+const handleChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    console.log("Hi");
+    const newValue = e.currentTarget.value;
+}
+
 const Editor = () => {
     return (
-        <h1>Editor</h1>
+        <div className="flex-auto h-full">
+            <textarea
+                className="min-w-full h-full resize-none editor-text-area"
+                onChange={handleChange}
+            />
+        </div>
     );
 };
 
