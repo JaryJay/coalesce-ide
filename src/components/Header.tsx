@@ -1,6 +1,10 @@
 const Header = () => {
     return (
-        <h1>Header</h1>
+        <div className="w-full bg-slate-400">
+            {
+                // Run button
+            }
+        </div>
     );
 };
 

@@ -1,24 +1,13 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
-
-const windowProperties = {
-    width: 800,
-    height: 600,
-    webPreferences: {
-        preload: path.join(__dirname, 'preload.js'),
-        nodeIntegration: true,
-    },
-    frame: false
-};
-
-
 // ============================================================================
 //
-// I did not write this code!
+// I did not write all this code!
 // Boilerplate code copied from
 // https://dev.to/olyno/how-to-create-an-electron-application-with-vite-im
 //
 // ============================================================================
+
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
 app.setUserTasks([
     {
@@ -40,8 +29,16 @@ const isDev = process.env.IS_DEV === 'true';
 
 const createWindow = () => {
     // Create the browser window.
-    const mainWindow = new BrowserWindow(windowProperties);
-    mainWindow.setMenuBarVisibility(false);
+    const mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+        },
+        frame: true,
+        autoHideMenuBar: true
+    });
 
     // Open the DevTools.
     if (isDev) {
